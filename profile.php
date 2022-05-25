@@ -58,7 +58,7 @@ require_once("pages/all_link.php")
 
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
-              <div class="card-body box-profile" style="margin-top: 500px;">
+              <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
                        src="img/user/user.png"
@@ -98,7 +98,7 @@ require_once("pages/all_link.php")
           </div>
 
 
-          <div class="card-body" style="margin-top: -20px;"> 
+          <div class="card-body" style="margin-top: 20px;"> 
             <p class="login-box-msg" style="font-size: 22px;">UPDATE YOUR PROFILE</p>
 <?php $bal = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `agent` WHERE `agent_id`='$my_id'"));?>
             <form action="req_hand.php" method="post">
