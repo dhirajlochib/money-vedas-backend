@@ -9,7 +9,7 @@ require("res/check_login.php");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Money vedas | Dashboard </title>
+  <tVadesMoney vedas | Dashboard </title>
 <?php
 require_once("pages/all_link.php")
 ?>
@@ -71,14 +71,15 @@ require_once("pages/all_link.php")
 
                 <ul class="list-group list-group-unbordered mb-3">
 
-      <li class="list-group-item">
+                  <li class="list-group-item">
                     <?php $bal = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `agent_income` WHERE `agent_id`='$my_id'"));?>
                     <b>Wallet Balance</b>
                     <a class="float-right"><b><?php echo $bal['wallet'] ?></b></h3></a>
                   </li>
-                </ul>
 
-                <a href="whatsapp://send?text=Hey, I Am Earning A Lot Of Money From Money vedas If You Have To Try Click On This Link:- http://moneyvedas.tech/register.php?spsid=<?php echo $my_id?>" class="btn btn-primary btn-block"><b>Invite Your Friend's</b></a>
+
+
+                </ul><a href="whatsapp://send?text=Hey, I Am EarvadesA Lot Of Money From Money vedas If You Have To Try Click On This Link:- http://moneyvedas.tech/register.php?spsid=<?php echo $my_id?>" class="btn btn-primary btn-block"><b>Invite Your Friend's</b></a>
               </div>
               <!-- /.card-body -->
             </div>

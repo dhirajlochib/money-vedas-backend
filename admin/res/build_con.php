@@ -5,10 +5,10 @@
   if (session_status() === PHP_SESSION_NONE) {
     session_start();
   }
-  $db_host = "localhost";
-  $db_user = "u867765973_money_vedas";
+  $db_host = "sql486.main-hosting.eu";
+  $db_user = "u867765973_money_vades";
   $db_pass = "1@Dhirajjat";
-  $db_name = "u867765973_money_vedas";
+  $db_name = "u867765973_money_vades";
   // $db_host = "localhost";
   // $db_user = "root";
   // $db_pass = "";
