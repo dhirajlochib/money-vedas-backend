@@ -50,11 +50,11 @@ require_once("pages/all_link.php")
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
-        <div class="col-lg-3 col-6">
+        
         <?php 
 
 $isVerified = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `agent` WHERE `agent_id`='$my_id'"));?>
-<?php if($isVerified['pay_number'] == "" || $isVerified['addres'] == ""){?>
+<?php if($isVerified['acc_number'] == "" || $isVerified['addres'] == ""){?>
           <div class="col-lg-3 col-6">
             <!-- small card -->
             <div class="small-box bg-success">
@@ -77,7 +77,7 @@ $isVerified = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `agent` WHER
         $agent_count_data = mysqli_fetch_array(mysqli_query($conn, "SELECT count(agent_id) total_agent FROM `agent` WHERE `sponser_id`='$my_id'"));
 
      ?>
-        
+        <div class="col-lg-3 col-6">
             <!-- small card -->
             <div class="small-box bg-warning">
               <div class="inner">
