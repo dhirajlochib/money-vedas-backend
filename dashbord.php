@@ -59,7 +59,7 @@ $isVerified = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `agent` WHER
             <!-- small card -->
             <div class="small-box bg-success">
               <div class="inner">
-              <h3>Earn More?</h3>
+              <h2>Earn More?</h2>
 
                 <p>Complete Your Profile</p>
               </div>
@@ -154,8 +154,27 @@ $isVerified = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `agent` WHER
               </a>
             </div>
           </div>
+          <?php
+        $agent_count_data = mysqli_fetch_array(mysqli_query($conn, "SELECT count(agent_id) total_click FROM `link_click` WHERE `agent_id`='$my_id'"));
 
+     ?>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3><?php echo $agent_count_data['total_click'] ?></h3>
 
+                <p>Total Link Click's</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <a href="whatsapp://send?text=Hey, I Am Earning A Lot Of Money From Money vedas If You Have To Try Click On This Link:- http://moneyvedas.tech/register.php?spsid=<?php echo $my_id?>" class="small-box-footer">
+                Share Your Link <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+         
 
         </div>
         <!-- /.row -->

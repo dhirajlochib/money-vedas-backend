@@ -3,7 +3,9 @@
 
 <?php
 
-session_start();
+require("res/build_con.php");
+require("res/fun.php");
+
 
 ?>
 
@@ -59,6 +61,16 @@ unset($_SESSION['reg']);
 </div>
 
 
+<?php if (isset($_GET['spsid'])){
+           $reg_id = $_GET['spsid'];
+           $ip_address = get_client_ip();
+            $sql = "INSERT INTO `link_click`(`agent_id`, `click_date`, `ip_address` ) VALUES ('$reg_id', NOW(), '$ip_address')";
+            $result = mysqli_query($conn, $sql);
+             
+         }else{
+          $reg_id = "";
+
+         }?>
 
 
   <div class="card card-outline card-primary">
@@ -71,18 +83,7 @@ unset($_SESSION['reg']);
       <p class="login-box-msg">Register a new membership</p>
 
       <form action="req_hand.php" method="post">
-        <div class="input-group mb-3">
-         <?php if (isset($_GET['spsid'])){
-           $reg_id = $_GET['spsid'];
-           $ip_address = get_client_ip();
-           //add entry in db for this user
-            $sql = "INSERT INTO `link_click`(`agent_id`, `click_date`, `ip_address`, ) VALUES ('$reg_id', NOW(), '$ip_address')";
-            $result = mysqli_query($conn, $sql);
-         }else{
-          $reg_id = "";
-
-         }?>
-         
+        <div class="input-group mb-3">         
           <input type="text" name="sps_id" value="<?php echo $reg_id; ?>" class="form-control" placeholder="Sponser ID" pattern[0-9]{6}>
           <div class="input-group-append">
             <div class="input-group-text">

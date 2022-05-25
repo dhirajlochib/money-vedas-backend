@@ -76,15 +76,6 @@ require_once("pages/all_link.php")
                     <b>Wallet Balance</b>
                     <a class="float-right"><b><?php echo $bal['wallet'] ?></b></h3></a>
                   </li>
-
-
-
-
-
-
-
-
-
                 </ul>
 
                 <a href="whatsapp://send?text=Hey, I Am Earning A Lot Of Money From Money vedas If You Have To Try Click On This Link:- http://moneyvedas.tech/register.php?spsid=<?php echo $my_id?>" class="btn btn-primary btn-block"><b>Invite Your Friend's</b></a>
