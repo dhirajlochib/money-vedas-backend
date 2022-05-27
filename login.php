@@ -1,6 +1,12 @@
 
 <?php
+
 session_start();
+
+unset($_SESSION["sess_id"]);
+unset($_SESSION["my_id"]);
+$agent_id = '';
+$user_mob = '';
 ?>
 
 
@@ -32,57 +38,16 @@ session_start();
     ?>
 <div class="alert alert-success">
   <?php
-
     echo " Hey, {$_SESSION['Name']} <br> Your Agent ID: {$_SESSION['agent_id']} ";
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     unset($_SESSION['agent_id']);
-    unset($_SESSION['Name']);
-
- ?>
-
-  </div>
-
+    unset($_SESSION['Name']);?></div>
 <?php
 unset($_SESSION['reg']);
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
   else if (isset($_SESSION['errror'])){
-
   ?>
   <div class="alert alert-danger">
   <?php
-
-
-
-
-
   if ($_SESSION['errror']){
 
   echo "Wrong Mobile Number Or Password!";
@@ -93,28 +58,15 @@ unset($_SESSION['reg']);
 
   <?php
   unset($_SESSION['errror']);
-
-
   }
-  
   elseif (isset($_SESSION['pass_ok'])){ 
-    
     ?>
     <div class="alert alert-success">
-    
     Your Password Changed Successfuly!!!
-
     </div>
     <?php 
-
-
 unset($_SESSION['pass_ok']);
-
   }
-  
-  
-  
-  
   ?>
 
   <div class="card card-outline card-primary">

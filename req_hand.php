@@ -47,27 +47,23 @@ if (isset($_REQUEST['login_btn'])) {
 
   $agent_id = mysqli_real_escape_string($conn, $_REQUEST['agent_id']);
   $agent_pass = mysqli_real_escape_string($conn, $_REQUEST['agent_pass']);
-  $data = mysqli_query($conn, "SELECT * FROM `agent` WHERE `agent_id`='$agent_id'");
-
+  $data = mysqli_query($conn, "SELECT * FROM `agent` WHERE `agent_id`='$agent_id' or `agent_mob`='$agent_id'"); 
 
 
   if (mysqli_num_rows($data) > 0) {
+
     $data = mysqli_fetch_array($data);
     $hash_pass = $data['password'];
     if (password_verify($agent_pass, $hash_pass)) {
       $_SESSION['sess_id'] = session_id();
-      $_SESSION['my_id'] = $agent_id;
+      $_SESSION['my_id'] = $data['agent_id'];
       $_SESSION['mobile'] = $user_mob;
       $date = date("Y-m-d H:i:s");
       $ipaddress = get_client_ip();
       $addEntryInDB = mysqli_query($conn, "INSERT INTO `login_history`(`agent_id`, `ip_address`, `login_time`) VALUES ('$agent_id','$ipaddress','$date')");
-      
-      if($addEntryInDB){
+     
         header('Location: dashbord.php');
-      }
-      else{
-        echo "Error";
-      }
+      
 
     } else {
       $_SESSION['errror'] = "not_found";
